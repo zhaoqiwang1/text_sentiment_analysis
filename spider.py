@@ -30,7 +30,7 @@ for start_num in range(0, 250, 25):
         title_string = title.string
         if "/" not in title_string:
             print(title_string)
-# What's next? Learn how to store the above printed targeting information into an excel file.
+# What's next? Learn how to store the above printed targeting information into an excel file!
 
 
 
