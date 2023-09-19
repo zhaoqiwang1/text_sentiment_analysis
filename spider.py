@@ -29,20 +29,30 @@ soup = BeautifulSoup(html, "html.parser")
 comments=[]
 all_comments = soup.findAll("div", attrs={"class": "title"})
 for content in all_comments:
- #   print(content)
-    content_string = content.string
-    comments.append(content_string)
-# print(comments)
-# print(len(comments))
+#     print(content)
+     content_string = content.string
+     comments.append(content_string)
+print(comments)
+print(len(comments))
 
 authors = []
-all_authors = soup.findAll("div", attrs={"class": "author cl"})
+all_authors = soup.find_all('div', attrs={"class": "author"})
 for author in all_authors:
-    print(author)
+    author_string = author.string
+    authors.append(author_string)
+print(authors)
+print(len(authors))
 
+dates = []
+all_dates = soup.find_all('div', attrs={"class": "update"})
+for date in all_dates:
+    date_string = date.string
+    dates.append(date_string)
+print(dates)
+print(len(dates))
 
 ## Store the above printed targeting information into an excel file!
-# data = {'Comments':comments}
-# df=pd.DataFrame(data)
-# df.to_excel("/Users/zwang/Documents/Research/motivation_text_sentiment/text_sentiment_analysis/output.xlsx", sheet_name='Sheet1', startrow=0, startcol=0)
+data = {'Comments':comments, 'Authors':authors, 'Dates':dates}
+df=pd.DataFrame(data)
+df.to_excel("/Users/zwang/Documents/Research/motivation_text_sentiment/text_sentiment_analysis/output.xlsx", sheet_name='Sheet1', startrow=0, startcol=0)
 
