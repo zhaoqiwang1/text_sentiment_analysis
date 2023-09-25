@@ -11,7 +11,7 @@ headers = {
 }
 # I actually not sure what exactly does the "f" do in the following line.
 # The video says this "f" helps us 格式化. I don't quite understand.
-response = requests.get("http://guba.eastmoney.com/list,002269.html", headers=headers)
+response = requests.get("http://guba.eastmoney.com/list,688320,99,f.html", headers=headers)
 # The following if statement helps us recognize if our request is succesful.
 if response.status_code >= 200 and response.status_code < 400:
     print("请求成功")
